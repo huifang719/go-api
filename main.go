@@ -9,7 +9,8 @@ import (
 func corsMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-		c.Writer.Header().Add("Access-Control-Allow-Headers", "Content-Type, Authorization, Origin, Accept, token")
+		c.Writer.Header().Set("Access-Control-Expose-Headers", "Content-Type")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")	
 		if c.Request.Method == "OPTIONS" {
 			c.AbortWithStatus(204)
