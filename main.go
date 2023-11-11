@@ -9,7 +9,7 @@ import (
 
 func corsMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Writer.Header().Set("Access-Control-Allow-Origin","https://*")
+		c.Writer.Header().Set("Access-Control-Allow-Origin","https://qliktesting.x10.mx/")
 		c.Writer.Header().Set("Access-Control-Expose-Headers", "Content-Type, Authorization, Accept, Accept-Language, X-Requested-With, XMLHttpRequest")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, Accept, Accept-Language, X-Requested-With, XMLHttpRequest")
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "false")
